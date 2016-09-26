@@ -1,0 +1,94 @@
+<?php
+
+$backendConfigDir = dirname(__FILE__);
+$root = $backendConfigDir.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..';
+
+Yii::setPathOfAlias('root', $root);
+Yii::setPathOfAlias('data', $root.DIRECTORY_SEPARATOR.'data');
+
+return array(
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+    // @todo name
+	'name'=>'Медальоны с шармами',
+    'language' => 'ru',
+
+	'preload'=>array('log', 'booster'),
+
+	'import'=>array(
+		'application.models.*',
+		'application.components.*',
+        'application.extensions.*',
+	),
+
+	'modules'=>array(
+	),
+	'components'=>array(
+		'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
+        'userForMail'=>[
+            'class'=>'UserForMail'
+        ],
+        'booster' => [
+            'class' => 'ext.booster.components.Booster',
+        ],
+		'urlManager'=>array(
+			'urlFormat'=>'path',
+			'rules'=>array(
+                'admin'=>'admin/index',
+                'admin/orderView/<id:\d+>'=>'admin/orderView',
+                'admin/orderDelete/<id:\d+>'=>'admin/orderDelete',
+                'admin/priceDelete/<id:\d+>'=>'admin/priceDelete',
+                'admin/<controller:\w+>/<action:\w+>/' => '<controller>/<action>/',
+                'admin/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>/',
+                // @todo category in catalog and model
+                '<type:(chain|medallion|charm)>'=>'site/catalog',
+                '<type:(chain|medallion|charm)>/<id:\d+>'=>'site/model',
+                'shipping'=>'site/shipping',
+                'customer'=>'site/customer',
+                'history'=>'site/history',
+                'cart'=>'site/cart',
+                'unsubscribe'=>'site/unsubscribe',
+                'order/<id:\d+>'=>'site/order',
+                'history/<id:\d+>'=>'site/historyItem',
+                'ajax/<action:\w+>'=>'ajax/<action>',
+            ),
+		),
+        // @todo db params
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=dbname',
+			'emulatePrepare' => true,
+			'username' => '',
+			'password' => '',
+			'charset' => 'utf8',
+		),
+		'errorHandler'=>array(
+			'errorAction'=>'site/error',
+		),
+		'log'=>array(
+			'class'=>'CLogRouter',
+			'routes'=>array(
+				array(
+					'class'=>'CFileLogRoute',
+					'levels'=>'error, warning',
+				),
+			),
+		),
+        'image'=>array(
+            'class'=>'CImageHandler',
+        ),
+	),
+    'params'=>array_merge(array(
+        // @todo params
+        'phone' => 'phone',
+        'email' => 'email',
+        'domain' => 'domain',
+        'ipAddress' => 'my_ip',
+		'postcode' => 0,
+		'postcalcUrl' => 'http://test.postcalc.ru/mystat.php/',
+        'vkontakteLink' => 'link',
+        'odnoklassnikiLink' => 'link',
+        'instagramLink' => 'link',
+        ), require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php')),
+);

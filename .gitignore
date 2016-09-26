@@ -1,0 +1,14 @@
+#phpstorm project files
+.idea
+
+# runtime and cache directories
+/assets
+/protected/runtime
+/protected/config/console.php
+/protected/config/main.php
+
+/protected/data/photo
+/data/news
+/data/photo
+/data/price
+/cgi-bin
