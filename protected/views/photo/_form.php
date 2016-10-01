@@ -145,7 +145,7 @@
             $('.sizes').hide();
         }
         sub_cat = $("#Photo_subcategoryArr");
-        if(sub_cat.val().length == 0){
+        if(sub_cat.children().length == 0){
             cat = $("#Photo_category").val();
             if(cat.length > 0) {
                 i = 0;
