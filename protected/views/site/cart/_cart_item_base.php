@@ -2,7 +2,7 @@
     <img src="<?= $cartItem->photo->getPreviewUrl(); ?>" class="item-list__item__photo">
 </a>
 <div class="item-list__item__cell item-list__item__cell_description">
-    <div class="item-list__item__name"><?= $cartItem->photo->title ?> арт. <?= $cartItem->photo->article ?></div>
+    <div class="item-list__item__name"><?= $cartItem->photo->title ?></div>
     <?php if($cartItem->size) :?>
         <div class="item-list__item__size">Размер: <?= $cartItem->size?></div>
     <?php endif; ?>

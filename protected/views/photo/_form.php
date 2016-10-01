@@ -25,6 +25,10 @@
             <div><?php echo $form->dropDownList($model,'category', Yii::app()->params['categories'], array('prompt'=>'')); ?></div>
         </div>
         <div class="row">
+            <div class="label"><?php echo $form->labelEx($model,'subcategory'); ?></div>
+            <div class="checkbox_list"><?php echo $form->checkBoxList($model,'subcategoryArr',isset($model->category)?Yii::app()->params['subcategories'][$model->category]:[]); ?></div>
+        </div>
+        <div class="row">
             <div class="label"><?php echo $form->labelEx($model,'article'); ?></div>
             <div><?php echo $form->textField($model,'article'); ?></div>
         </div>
@@ -156,6 +160,17 @@
         } else {
             $('.sizes').hide();
         }
+    });
+    $("#Photo_category").change(function() {
+        e = $( "#Photo_subcategoryArr" );
+        e.empty();
+        i = 0;
+        $.each(subcategory[$(this).val()], function( key, value ) {
+            input = '<input id="Photo_subcategoryArr_'+i+'" value="'+key+'" type="checkbox" name="Photo[subcategoryArr][]">';
+            label = '<label for="Photo_subcategoryArr_'+i+'">'+value+'</label>';
+            e.append(input, label);
+            i++;
+        });
     });
     $('#Photo_image').change(function() {
         article = $(this).val().replace(/C:\\fakepath\\/i, '').replace(/\.jpg/i, '');

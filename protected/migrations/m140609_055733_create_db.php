@@ -4,6 +4,13 @@ class m140609_055733_create_db extends CDbMigration
 {
 	public function up()
 	{
+
+//        CREATE TABLE IF NOT EXISTS `tbl_migration` (
+//        `version` varchar(255) NOT NULL,
+//          `apply_time` int(11) DEFAULT NULL,
+//          PRIMARY KEY (`version`)
+//        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
         $this->createTable('user', array(
             'id' => 'pk',
             'username' => 'string',
@@ -25,6 +32,7 @@ class m140609_055733_create_db extends CDbMigration
             'id' => 'pk',
             'img' => 'string',
             'category' => 'string',
+            'subcategory' => 'string',
             'article' => 'string',
             'price' => 'int',
             'is_sale' => 'boolean',

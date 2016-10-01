@@ -8,12 +8,12 @@
                     <span class="item__label item__label_new">Новинка</span>
                 <?php endif; ?>
             <?php endif; ?>
-            <a href="/<?= $type ?>/<?= $photo->article ?>">
-                <img class="catalog__item__img lazy" data-original="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="Женская одежда, <?=$photo->title; ?> арт. <?= $photo->article; ?>">
+            <a href="/<?= $type ?>/<?= $photo->article . (isset($_GET['subcategory']) ? '?subcategory=' . $_GET['subcategory'] : '') ?>">
+                <img class="catalog__item__img lazy" data-original="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="<?=$photo->title; ?> арт. <?= $photo->article; ?>">
                 <noscript>
-                    <img class="catalog__item__img" src="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="Женская одежда, <?=$photo->title; ?> арт. <?= $photo->article; ?>">
+                    <img class="catalog__item__img" src="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="<?=$photo->title; ?> арт. <?= $photo->article; ?>">
                 </noscript>
-                <div class="catalog__item__article">Арт.&nbsp;<?= $photo->article ?></div>
+                <div class="catalog__item__article"><?= $photo->title ?></div>
                 <span class="price">
                     <?php if(!$photo->is_available) :?>
                         <span class="catalog__not_available">Нет в наличии</span>
@@ -56,17 +56,17 @@
     $( '.catalog__item' ).on( 'click', '.buy-button', function() {
         $(".size.size_error").removeClass("size_error");
         $(".catalog__item__link.selected").removeClass("selected");
-        if ($(this).parent('div').find(".button_pressed").length==0 && !$(this).hasClass("uni_size")){
-            if ($(this).parent('div').find(".size_button").length==1){
-                $(this).parent('div').find(".size_button").addClass("button_pressed");
-                addItemToCart($(this).attr('id'));
-            } else {
-                $(this).parent('.catalog__item__link').children('.size').addClass('size_error');
-                $(this).parent('.catalog__item__link').addClass('selected');
-            }
-        } else {
+//        if ($(this).parent('div').find(".button_pressed").length==0 && !$(this).hasClass("uni_size")){
+//            if ($(this).parent('div').find(".size_button").length==1){
+//                $(this).parent('div').find(".size_button").addClass("button_pressed");
+//                addItemToCart($(this).attr('id'));
+//            } else {
+//                $(this).parent('.catalog__item__link').children('.size').addClass('size_error');
+//                $(this).parent('.catalog__item__link').addClass('selected');
+//            }
+//        } else {
             addItemToCart($(this).attr('id'));
-        }
+//        }
     });
 
     $( '.catalog__item' ).on( 'click', '.size_button', function() {

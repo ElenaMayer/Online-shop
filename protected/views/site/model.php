@@ -2,6 +2,7 @@
     <div class="model__breadcrumbs">
         <a href="/" class="model__breadcrumbs__item">Главная</a>
         <a class="model__breadcrumbs__item" href="/<?=$type?>"><?=Yii::app()->params["categories"][$type]?></a>
+        <?php if (isset($_GET['subcategory'])):?><a class="model__breadcrumbs__item" href="/<?= $type ?>?subcategory=<?= $_GET['subcategory'] ?>"><?=Yii::app()->params["subcategories"][$type][$_GET['subcategory']] ?></a><?php endif; ?>
         <span class="model__breadcrumbs__item"><?=$model->title?> арт. <?=$model->article?></span>
     </div>
     <div class="table__column table__column_left">
@@ -15,7 +16,7 @@
                             <span class="item__label item__label_new">Новинка</span>
                         <?php endif; ?>
                     <?php endif; ?>
-                    <a href="<?= $model->getOriginalUrl(); ?>" class="MagicZoom" rel="zoom-height:475px; zoom-width:580px; hint: false;"><img src="<?= $model->getImageUrl(); ?>" alt="<?=$model->title; ?> арт. <?= $model->article; ?>"/></a>
+                    <a href="<?= $model->getOriginalUrl(); ?>" class="MagicZoom" rel="zoom-height:523px; zoom-width:565px; hint: false;"><img src="<?= $model->getImageUrl(); ?>" alt="<?=$model->title; ?> арт. <?= $model->article; ?>"/></a>
                 </div>
             </div>
         </div>

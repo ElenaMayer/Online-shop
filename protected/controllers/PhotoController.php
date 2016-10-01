@@ -46,6 +46,7 @@ class PhotoController extends Controller
 		if(isset($_POST['Photo']))
 		{
 			$model->attributes=$_POST['Photo'];
+            $model->subcategory = implode(",", $_POST['Photo']['subcategoryArr']);
 			if($model->save()){
 				$this->redirect('/admin/photo/create');
             }
@@ -67,6 +68,7 @@ class PhotoController extends Controller
 		if(isset($_POST['Photo']))
 		{
 			$model->attributes=$_POST['Photo'];
+            $model->subcategory = implode(",", $_POST['Photo']['subcategoryArr']);
 			if($model->save()){
 				$this->redirect(array('index'));
             }

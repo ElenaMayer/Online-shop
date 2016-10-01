@@ -15,6 +15,7 @@
  * @property integer $is_new
  * @property integer $price
  * @property string $category
+ * @property string $subcategory
  * @property integer $is_sale
  * @property integer $sale
  * @property integer $new_price
@@ -37,6 +38,7 @@ class Photo extends CActiveRecord
     public $is_new = false;
     public $has_size = false;
     public $weight = 10;
+    public $subcategoryArr;
 
 	/**
 	 * @return string the associated database table name
@@ -57,7 +59,7 @@ class Photo extends CActiveRecord
             array('weight, is_show, is_available, is_new, price, is_sale, sale, new_price, old_price, has_size', 'numerical', 'integerOnly'=>true),
             array('img, title, category, sizes', 'length', 'max'=>255),
             array('description, date_create', 'safe'),
-            array('article, is_show, is_available, is_new, price, category, is_sale', 'safe', 'on'=>'search'),
+            array('article, is_show, is_available, is_new, price, category, subcategory, is_sale', 'safe', 'on'=>'search'),
             array('date_create','default', 'value'=>new CDbExpression('NOW()'), 'setOnEmpty'=>false,'on'=>'insert'),
             array('image', 'file', 'types'=>'jpg, gif, png', 'allowEmpty'=>true,'on'=>'insert,update'),
             array('category, title, article, weight, price', 'required', 'message'=>'Это поле необходимо заполнить.'),
@@ -85,6 +87,7 @@ class Photo extends CActiveRecord
 			'img' => 'Фото',
             'image' => 'Фото',
 			'category' => 'Категория',
+            'subcategory' => 'Подкатегория',
 			'article' => 'Артикул',
             'weight' => 'Вес',
 			'price' => 'Цена',
@@ -119,6 +122,7 @@ class Photo extends CActiveRecord
 	{
 		$criteria=new CDbCriteria;
 		$criteria->compare('category',$this->category);
+        $criteria->compare('subcategory',$this->subcategory);
 		$criteria->compare('article',$this->article);
 		$criteria->compare('price',$this->price,true);
         $criteria->compare('is_show',$this->is_show);
@@ -136,6 +140,11 @@ class Photo extends CActiveRecord
             )
 		));
 	}
+
+    protected function afterFind(){
+        parent::afterFind();
+        $this->subcategoryArr = explode(",", $this->subcategory);
+    }
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -239,38 +248,61 @@ class Photo extends CActiveRecord
         return Yii::getPathOfAlias('root.protected.data').DIRECTORY_SEPARATOR.'watermark.png';
     }
 
-    public function getPhotos($category, $order_str = 'по популярности', $size = 'все'){
-        switch($order_str) {
+    public function getPhotos($params){
+        $criteria = new CDbCriteria();
+        switch($params['order']) {
             case 'по новинкам':
-                $order = 'is_available DESC, is_new  DESC';
-                break;
-            case 'по популярности':
-                $order = 'article';
+                $criteria->order = 'is_available DESC, is_new  DESC';
                 break;
             case 'по возрастанию цены':
-                $order = 'is_available DESC, price';
+                $criteria->order = 'is_available DESC, price';
                 break;
             case 'по убыванию цены':
-                $order = 'is_available DESC, price DESC';
+                $criteria->order = 'is_available DESC, price DESC';
                 break;
             case 'по скидкам':
-                $order = 'is_available DESC, is_sale DESC, sale DESC';
+                $criteria->order = 'is_available DESC, is_sale DESC, sale DESC';
+                break;
+            case 'по популярности':
+            default:
+                $criteria->order = 'article';
                 break;
         }
-        if ($size == 'все') {
-            return $this->findAllByAttributes(
-                array('is_show' => 1, 'category' => $category),
-                array('order' => $order)
-            );
-        } else {
-            $sql = "SELECT * FROM photo
-                    WHERE
-                      is_show = 1 AND
-                      category = '".$category."' AND
-                      has_size = 1 AND sizes LIKE '%".$size."%'
-                      ORDER BY ".$order;
-            return $this->findAllBySql($sql, []);
+        $criteria->compare('is_show', 1);
+        $criteria->compare('category', $params['category']);
+        if (isset($params['subcategory']))
+            $criteria->addSearchCondition('subcategory', $params['subcategory']);
+
+        if ($params['size'] != 'все') {
+            $criteriaS = new CDbCriteria();
+            $sizesArr = explode(",", $params['size']);
+            foreach ($sizesArr as $size) {
+                $criteriaWS = new CDbCriteria();
+                $criteriaWUS = new CDbCriteria();
+                $criteriaWS->compare('size', 1);
+                $criteriaWS->addSearchCondition('sizes', $size);
+                $criteriaWUS->compare('size', 0);
+                $criteriaWUS->compare('size_at', '<='.$size);
+                $criteriaWUS->compare('size_to', '>='.$size);
+                $criteriaWS->mergeWith($criteriaWUS, 'OR');
+                $criteriaS->mergeWith($criteriaWS, 'OR');
+            }
+            $criteria->mergeWith($criteriaS);
         }
+        return $this->findAll($criteria);
+    }
+
+    public function itemCountByCategory($category){
+        return $this->countByAttributes([
+            'is_show' => 1,
+            'category' => $category
+        ]);
+    }
+    public function itemCountBySubcategory($subcategory){
+        $criteria = new CDbCriteria();
+        $criteria->compare('is_show', 1);
+        $criteria->addSearchCondition('subcategory', $subcategory);
+        return $this->count($criteria);
     }
 
     public function getOrderList($type){

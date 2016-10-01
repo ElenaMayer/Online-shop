@@ -56,6 +56,7 @@
     line-height: 17px;
     position: relative;
     z-index: 1;
+    padding-bottom: 15px;
 }
 .catalog__item__link:hover .catalog__item__article,
 .catalog__item__link.selected .catalog__item__article {
@@ -71,7 +72,7 @@
     padding-right: 20px;
     padding-left: 20px;
     margin-left: -8px;
-    border-bottom: 5px solid #eee;
+    border-bottom: 3px solid #D51AB1;
     margin-bottom: 6px;
     padding-top: 5px;
 }
@@ -156,6 +157,42 @@
     background-color: #ddd;
     color: #000;
 }
+.catalog-navigation-wrap {
+    position: absolute;
+    width: 192px;
+    top: 0;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.catalog-navigation__title {
+     font-weight: 700;
+     color: #222;
+     margin-bottom: 10px;
+     margin-top: 10px;
+ }
+.catalog-navigation {
+     margin: 0;
+     padding: 0;
+     font-size: 13px;
+     list-style-type: none;
+ }
+.catalog-navigation__item {
+     margin: 0 0 20px;
+ }
+.catalog-navigation__cnt {
+     color: #bbb;
+     margin-left: 1px;
+     font-size: 11px;
+ }
+.catalog-navigation_subtree {
+     padding: 4px 0 0 10px;
+ }
+.catalog-navigation_subtree .catalog-navigation__item {
+     margin-bottom: 6px;
+ }
+.table__right-column {
+     padding-left: 232px;
+ }
 
 /* Model */
 
@@ -259,7 +296,7 @@
     padding-top: 10px;
 }
 .model .MagicZoomBigImageCont{
-    width: 154% !important;
+    width: 146% !important;
     left: 103% !important;
 }
 
@@ -520,7 +557,7 @@
 }
 .item-list__item__photo {
     width: 135px;
-    height: 194px;
+    height: 135px;
     display: block;
     margin: 1px 0;
 }
@@ -1218,11 +1255,14 @@ body.main.modal-open {
 
 /* Common */
 
-.content {
+.content > div:first-child {
     width: 960px;
     margin: 0 auto;
     background-color: #fff;
     max-width: 100%;
+}
+.content > div.catalog {
+    width: 1192px;
 }
 .content a {
     color: #7C27CF;
@@ -1306,6 +1346,12 @@ body.main.modal-open {
 .table__column {
     vertical-align: top;
     display: table-cell;
+}
+.table__left-column {
+    width: 192px;
+    float: left;
+    padding: 10px 20px 0 0;
+    position: relative;
 }
 .table__column_right {
     width: 57%;
@@ -1484,7 +1530,7 @@ div.form select {
     border: 0px !important;
     box-shadow: none !important;
 }
-.panel-group .panel-heading+.panel-collapse .panel-body {
+.panel-group .panel-heading.panel-collapse .panel-body {
     border-top: 0px !important;
 }
 .panel-group {

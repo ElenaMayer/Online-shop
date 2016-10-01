@@ -304,3 +304,13 @@ h1 {
     font-size: 18px;
     padding-top: 10px;
 }
+.row .checkbox_list {
+    padding-left: 140px;
+}
+.row .checkbox_list input {
+    float: left;
+    margin: 0 10px 0 0;
+}
+.row .checkbox_list br {
+    content: ' ';
+}

@@ -13,6 +13,18 @@ return array(
         'medallion' => 'Медальоны',
         'charm' => 'Шармы',
     ),
+    'subcategories' => [
+        'charm' => [
+            'letters' => 'Буквы',
+            'family' => 'Семья',
+            'love' => 'Любовь',
+            'symbols' => 'Символы',
+            'animals' => 'Животные',
+            'hobby' => 'Увлечения',
+            'nature' => 'Природа',
+            'crystals' => 'Стразы'
+        ],
+    ],
 //    'shippingFreeCount' => 3,
 //    'shippingFreeCountString' => 'трех',
     'maxItemCountInCart' => 10,

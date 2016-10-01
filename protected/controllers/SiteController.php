@@ -126,7 +126,14 @@ class SiteController extends Controller
             $this->setOrder($_GET['order']);
         if(isset($_GET['size']))
             $this->setSize($_GET['size']);
-        $model = Photo::model()->getPhotos($type, $this->getOrder(), $this->getSize());
+        $params = [
+            'category' => $type,
+            'order' => $this->getOrder(),
+            'size' => $this->getSize(),
+        ];
+        if (isset($_GET['subcategory']))
+            $params['subcategory'] = $_GET['subcategory'];
+        $model = Photo::model()->getPhotos($params);
         if(isset($_GET['order']) || isset($_GET['size']))
             $this->renderPartial('catalog/catalog',array('model'=>$model, 'type'=>$type));
         else
