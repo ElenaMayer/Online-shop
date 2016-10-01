@@ -201,7 +201,10 @@
 }
 .model .table__column_left {
     width: 40%;
-    padding-right: 10px;
+    background-color: #eeeeee;
+}
+.model .model__photo {
+    padding-right: 5px;
 }
 .model__img {
     display: block;

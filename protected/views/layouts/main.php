@@ -7,7 +7,7 @@
     <!-- @todo description-->
     <meta name="description" content="Интернет-магазин уникальных украшений. Медальоны и плавающие шармы для создания собственного украшения."/>
     <!-- @todo favicon-->
-    <link rel="icon" href="<?php echo Yii::app()->request->baseUrl; ?>/favicon.ico?3" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo Yii::app()->request->baseUrl; ?>/favicon.ico?4" type="image/x-icon"/>
 
     <?php Yii::app()->clientScript->registerScriptFile('/js/common.js?1', CClientScript::POS_HEAD) ?>
     <?php Yii::app()->clientScript->registerScriptFile('/js/magiczoom.js', CClientScript::POS_HEAD) ?>
