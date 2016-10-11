@@ -9,7 +9,7 @@
                 <?php endif; ?>
             <?php endif; ?>
             <a href="/<?= $type ?>/<?= $photo->article . (isset($_GET['subcategory']) ? '?subcategory=' . $_GET['subcategory'] : '') ?>">
-                <img class="catalog__item__img lazy" data-original="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="<?=$photo->title; ?> арт. <?= $photo->article; ?>">
+                <img class="catalog__item__img lazy" data-original="<?= $photo->getPreviewUrl(); ?>" width="221" height="221" alt="<?=$photo->title; ?> арт. <?= $photo->article; ?>">
                 <noscript>
                     <img class="catalog__item__img" src="<?= $photo->getPreviewUrl(); ?>" width="223" height="223" alt="<?=$photo->title; ?> арт. <?= $photo->article; ?>">
                 </noscript>

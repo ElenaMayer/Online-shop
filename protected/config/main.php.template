@@ -89,6 +89,7 @@ return array(
 		'postcalcUrl' => 'http://test.postcalc.ru/mystat.php/',
         'vkontakteLink' => 'link',
         'odnoklassnikiLink' => 'link',
+        'facebookLink' => 'link',
         'instagramLink' => 'link',
         ), require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php')),
 );

@@ -52,7 +52,7 @@
 }
 .catalog__item__article {
     color: #999;
-    margin: 8px 10px 0;
+    margin: 8px 8px 0;
     line-height: 17px;
     position: relative;
     z-index: 1;
@@ -1143,6 +1143,12 @@ body.main.modal-open {
 .header__social-item_ig:hover {
     background-position: -52px -26px;
 }
+.header__social-item_fb {
+    background-position: -78px 0;
+}
+.header__social-item_fb:hover {
+    background-position: -78px -26px;
+}
 .user-nav__sign-in {
     display: inline-block;
     position: relative;
@@ -1263,6 +1269,7 @@ body.main.modal-open {
     margin: 0 auto;
     background-color: #fff;
     max-width: 100%;
+    padding: 30px 10px;
 }
 .content > div.catalog {
     width: 1192px;
@@ -1566,6 +1573,9 @@ h3.news {
 }
 .main-description {
     padding: 30px;
+    background-color: #fff;
+    width: 960px;
+    margin: 0 auto;
 }
 .main-description p {
     padding-bottom: 5px;

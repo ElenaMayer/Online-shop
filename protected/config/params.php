@@ -2,9 +2,9 @@
 return array(
     // @todo params
     'carouselUrl' => [
-        'first' => '/dress',
-        'second' => '/dress/11021',
-        'third' => ''
+        'first' => '/medallion',
+        'second' => '/charm',
+        'third' => '/chain'
     ],
 //    'newsCount' => 3,
 //    'newPhotoCountInMail' => 6,

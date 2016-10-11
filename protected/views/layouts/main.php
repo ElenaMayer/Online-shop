@@ -64,7 +64,7 @@
                         <div class="header__contact_item_right">
                             <a target="_blank" class="header__social-item header__social-item_vk" href="<?=Yii::app()->params['vkontakteLink']?>"></a>
                             <a target="_blank" class="header__social-item header__social-item_ig" href="<?=Yii::app()->params['instagramLink']?>"></a>
-                            <a target="_blank" class="header__social-item header__social-item_ok" href="<?=Yii::app()->params['odnoklassnikiLink']?>"></a>
+                            <a target="_blank" class="header__social-item header__social-item_fb" href="<?=Yii::app()->params['facebookLink']?>"></a>
                         </div>
                     </div>
                     <div class="user-nav user-nav_signed">

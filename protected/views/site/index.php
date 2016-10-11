@@ -47,6 +47,10 @@ $this->pageTitle=Yii::app()->name;
     $(".carousel-inner div:nth-child(2) img").click(function(){
         window.location = "<?=Yii::app()->params['carouselUrl']['second']?>";
     });
+    $(".carousel-inner div:nth-child(3) img").css('cursor', 'pointer');
+    $(".carousel-inner div:nth-child(3) img").click(function(){
+        window.location = "<?=Yii::app()->params['carouselUrl']['third']?>";
+    });
     $(document).ready(function() {
         if (<?= isset($_GET['login']) ? 1 : 0;?> == 1) {
             jQuery('#auth_form').modal('show');
