@@ -3,7 +3,7 @@
     <tbody>
         <tr>
             <td align="center" style="padding:0 70px;">
-                <font color="#CB2228" size="5" style="font-size: 23px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
+                <font color="#D51AB1" size="5" style="font-size: 23px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
                     <b><?php if(!empty($order->user)):?><?= $order->user->getTitleName(); ?>,<?php endif ?>
                         <?php if($order->status == 'in_progress'):?> Ваш заказ принят!
                         <?php elseif($order->status == 'collect') :?> Ваш заказ передан на комплектацию!
@@ -21,8 +21,8 @@
                 <td align="center" style="padding:20px 70px;">
                     <font size="5" style="font-size: 16px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
                         Вы можете отслеживать посылку на сайте
-                        <a href="<?php if($order->shipping_method == 'russian_post'):?>https://www.pochta.ru/tracking<?php elseif($order->shipping_method == 'ems') :?>http://www.emspost.ru/ru/tracking/<?php endif;?>" target="_blank">
-                            <font size="3" style="font-size: 16px;" color="#CB2228" face="Arial, Helvetica, sans-serif">
+                        <a href="<?php if($order->shipping_method == 'russian_post'):?>https://www.pochta.ru/tracking#<?= $order->track_code ?><?php elseif($order->shipping_method == 'ems') :?>http://www.emspost.ru/ru/tracking/<?php endif;?>" target="_blank">
+                            <font size="3" style="font-size: 16px;" color="#D51AB1" face="Arial, Helvetica, sans-serif">
                                 <?php if($order->shipping_method == 'ems') :?>EMS <?php endif;?>Почты России
                             </font>
                         </a> по почтовому идентификатору
@@ -50,7 +50,7 @@
                                             </td>
                                             <td style="text-align: right;">
                                                 <a href="http://<?= Yii::app()->params['domain'] ?>/history/<?= $order->id ?>" target="_blank">
-                                                    <font size="3" style="font-size: 16px;" color="#CB2228" face="Arial, Helvetica, sans-serif">
+                                                    <font size="3" style="font-size: 16px;" color="#D51AB1" face="Arial, Helvetica, sans-serif">
                                                         <b><?= $order->id ?></b>
                                                     </font>
                                                 </a>
@@ -156,7 +156,7 @@
                                                 <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><b>Товаров</b></font>
                                             </td>
                                             <td style="text-align: right;">
-                                                <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= count($order->cartItems) ?> шт.</font>
+                                                <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $order->getOrderItemsCount() ?> шт.</font>
                                             </td>
                                         </tr>
                                         <tr>
@@ -200,14 +200,14 @@
                                             <td width="315" align="left">
                                                 <font size="2" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><b>Заказ</b></font>
                                             </td>
-<!--                                            <td width="70">-->
+                                            <td width="70">
 <!--                                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Размер</b></font>-->
-<!--                                            </td>-->
+                                            </td>
                                             <td width="70">
                                                 <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Кол-во</b></font>
                                             </td>
                                             <td width="105">
-                                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Со скидкой</b></font>
+                                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Стоимость</b></font>
                                             </td>
                                         </tr>
                                         <?php foreach($order->cartItems as $cartItem) :?>
@@ -216,15 +216,15 @@
                                             </tr>
                                             <tr valign="top" align="right" style="line-height: 2;">
                                                 <td align="left">
-                                                    <font size="3" style="font-size: 16px;" color="#1868a0" face="Arial, Helvetica, sans-serif">
+                                                    <font size="3" style="font-size: 16px;" color="#D51AB1" face="Arial, Helvetica, sans-serif">
                                                         <a href="http://<?= Yii::app()->params['domain'] ?>/<?= $cartItem->photo->category ?>/<?= $cartItem->photo->article ?>" target="_blank">
-                                                            <font size="3" style="font-size: 16px;color: #CB2228;" color="#1868a0" face="Arial, Helvetica, sans-serif"><?= $cartItem->photo->title ?> арт. <?= $cartItem->photo->article ?></font>
+                                                            <font size="3" style="font-size: 16px;color: #D51AB1;" color="#D51AB1" face="Arial, Helvetica, sans-serif"><?= $cartItem->photo->title ?> арт. <?= $cartItem->photo->article ?></font>
                                                         </a>
                                                     </font>
                                                 </td>
-<!--                                                <td style="text-align: center;">-->
+                                                <td style="text-align: center;">
 <!--                                                    <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><//= $cartItem->size ?><!--</font>-->
-<!--                                                </td>-->
+                                                </td>
                                                 <td style="text-align: center;">
                                                     <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $cartItem->count ?></font>
                                                 </td>
@@ -253,13 +253,13 @@
                                         <tr valign="top" align="right" style="line-height: 2;">
                                             <td align="left">
                                                 <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif">
-                                                    Итого
+                                                    <b>Итого</b>
                                                 </font>
                                             </td>
                                             <td></td>
                                             <td style="text-align: center;">
                                                 <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif">
-                                                    <?= count($order->cartItems) ?>
+                                                    <b><?= $order->getOrderItemsCount() ?></b>
                                                 </font>
                                             </td>
                                             <td style="text-align: center;">

@@ -595,6 +595,7 @@
 }
 .item-list__item__name {
     font-weight: bold;
+    white-space: normal;
 }
 .item-list__item__old-price {
     color: #999;
@@ -706,6 +707,10 @@
 }
 th.item-list__order____cell {
     background-color: #e6e6e6;
+}
+
+.item-list__content .item-list__item__cell_total {
+    margin-right: 20px;
 }
 
 /* LC (History, Customer) */

@@ -35,9 +35,9 @@
                                                                             <table cellpadding="0" cellspacing="0" border="0" style="border:none;border-collapse:collapse;">
                                                                                 <tbody>
                                                                                 <tr>
-                                                                                    <td style="border:none;line-height:0px;font-size:0;padding-left: 10px;padding-right: 60px;">
+                                                                                    <td style="border:none;line-height:0px;font-size:0;padding: 10px 60px 10px 10px;">
                                                                                         <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>">
-                                                                                            <img vspace="0" hspace="0" style="border:none;text-decoration:none;line-height:0;vertical-align:top;display:block;padding:0px;margin:0px;height: 56px;width: 323px;" border="0" src="http://<?php echo Yii::app()->params['domain']; ?>/data/i/logo.png?1">
+                                                                                            <img vspace="0" hspace="0" style="border:none;text-decoration:none;line-height:0;vertical-align:top;display:block;padding:0px;margin:0px;height: 142px;width: 323px;" border="0" src="http://<?php echo Yii::app()->params['domain']; ?>/data/i/logo.png?1">
                                                                                         </a>
                                                                                     </td>
                                                                                     <td style="border:none;line-height:0px;font-size:0;height: 30px;width: 30px;padding-right: 10px;">

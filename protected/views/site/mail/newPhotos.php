@@ -2,7 +2,7 @@
 <tbody>
 <tr>
     <td align="center" style="padding:0 70px;text-align: center;">
-        <font color="#CB2228" size="5" style="font-size: 23px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
+        <font color="#D51AB1" size="5" style="font-size: 23px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
                 <b>Наши новинки!</b>
         </font>
         <br>
@@ -22,9 +22,9 @@
                         <?php foreach($photos as $key=>$photo) :?>
                             <?php if(($key+1)%2 == 1):?><tr valign="top" align="right" style="line-height: 2;"><?php endif; ?>
                                 <td align="left">
-                                    <font size="3" style="font-size: 16px;" color="#1868a0" face="Arial, Helvetica, sans-serif">
+                                    <font size="3" style="font-size: 16px;" color="#D51AB1" face="Arial, Helvetica, sans-serif">
                                         <a href="http://<?= Yii::app()->params['domain'] ?>/<?= $photo->category ?>/<?= $photo->article ?>" target="_blank" style="text-decoration: none;">
-                                            <font size="3" style="font-size: 16px;color: #CB2228; display: block; text-align: center; width: 225px;" color="#1868a0" face="Arial, Helvetica, sans-serif"><?= $photo->title ?> арт. <?= $photo->article ?></font>
+                                            <font size="3" style="font-size: 16px;color: #D51AB1; display: block; text-align: center; width: 225px;" color="#D51AB1" face="Arial, Helvetica, sans-serif"><?= $photo->title ?> арт. <?= $photo->article ?></font>
                                             <img src="http://<?= $photo->getFullPreviewUrl(); ?>" style="width: 225px; height: 300px;">
                                         </a>
                                     </font>
@@ -46,7 +46,7 @@
 <tr>
     <td align="center" style="padding:20px 30px;text-align: center;">
         <font size="5" style="font-size: 19px;line-height: 1.2;" face="Arial, Helvetica, sans-serif">
-            ... и многое другое! Все новинки можно посмотреть на нашем сайте <b><a href="http://<?= Yii::app()->params['domain'] ?>" target="_blank" style="text-decoration: none;"><font size="3" style="font-size: 23px;color: #CB2228; text-align: center; width: 225px;" color="#1868a0" face="Arial, Helvetica, sans-serif"><?= Yii::app()->params['domain'] ?></font></a></b>
+            ... и многое другое! Все новинки можно посмотреть на нашем сайте <b><a href="http://<?= Yii::app()->params['domain'] ?>" target="_blank" style="text-decoration: none;"><font size="3" style="font-size: 23px;color: #D51AB1; text-align: center; width: 225px;" color="#D51AB1" face="Arial, Helvetica, sans-serif"><?= Yii::app()->params['domain'] ?></font></a></b>
         </font>
         <br>
     </td>

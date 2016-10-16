@@ -180,4 +180,12 @@ class Order extends CActiveRecord
 		}
 		return $color;
 	}
+
+    public function getOrderItemsCount(){
+        $count = 0;
+        foreach ($this->cartItems as $item) {
+            $count += $item->count;
+        }
+        return $count;
+    }
 }
