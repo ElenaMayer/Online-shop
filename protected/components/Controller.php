@@ -49,4 +49,12 @@ class Controller extends CController
         $res .= date(" Y", strtotime($date));
         return $res;
     }
+
+    public function getCategoryForMenu(){
+        $res = [];
+        foreach (Yii::app()->params['categories'] as $categoryId => $categoryTitle){
+            $res[] = array('label' => $categoryTitle, 'url' => '/'.$categoryId, 'active'=>strpos(Yii::app()->request->pathInfo, $categoryId)===false? false:true);
+        }
+        return $res;
+    }
 }

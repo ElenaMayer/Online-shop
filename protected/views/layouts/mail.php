@@ -56,32 +56,19 @@
                                                                                 </tr>
                                                                                 </tbody>
                                                                             </table>
-                                                                            <table width="100%" height="30" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #ca0600 !important;border-top: 1px solid #ca0600 !important;border-collapse:collapse;background: #ca0600;" bgcolor="#28292d">
+                                                                            <table width="100%" height="30" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #D51AB1 !important;border-top: 1px solid #D51AB1 !important;border-collapse:collapse;background: #D51AB1;" bgcolor="#28292d">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td width="20" height="30" style="width: 70px;height:30px;border:none;line-height:13px;font-size:13px;background: #ca0600;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
-                                                                                            <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>/dress" style="text-decoration:none;display:block;line-height:32px;">
-                                                                                                <span style="color: #ffffff;line-height:13px;font-size:13px;">Платья</span>
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td width="90" height="30" style="width:70px;height:30px;border:none;line-height:13px;font-size:13px;background: #ca0600;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
-                                                                                            <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>/blouse" style="text-decoration:none;display:block;line-height:32px;">
-                                                                                                <span style="color: #ffffff;line-height:13px;font-size:13px;">Блузки</span>
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td width="90" height="30" style="width:70px;height:30px;border:none;line-height:13px;font-size:13px;background: #ca0600;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
-                                                                                            <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>/kimono" style="text-decoration:none;display:block;line-height:32px;">
-                                                                                                <span style="color: #ffffff;line-height:13px;font-size:13px;">Кимоно</span>
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td width="70" height="30" style="width:70px;height:30px;border:none;line-height:13px;font-size:13px;background: #ca0600;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
-                                                                                            <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>/other" style="text-decoration:none;display:block;line-height:32px;">
-                                                                                                <span style="color: #ffffff;line-height:13px;font-size:13px;">Разное</span>
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td width="98" height="30" style="width: 60px;height:30px;border:none;line-height:13px;font-size:13px;background: #ca0600;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
+                                                                                        <?php foreach (Yii::app()->params['categories'] as $categoryId => $categoryTitle): ?>
+                                                                                            <td height="30" style="width: 70px;height:30px;border:none;line-height:13px;font-size:13px;background: #D51AB1;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
+                                                                                                <a target="_blank" href="http://<?php echo Yii::app()->params['domain'].'/'.$categoryId; ?>" style="text-decoration:none;display:block;line-height:32px;">
+                                                                                                    <span style="color: #ffffff;line-height:13px;font-size:13px;"><?php echo $categoryTitle; ?></span>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        <?php endforeach; ?>
+                                                                                        <td height="30" style="width: 70px;height:30px;border:none;line-height:13px;font-size:13px;background: #D51AB1;vertical-align:middle;" valign="middle" align="center" bgcolor="#28292d">
                                                                                             <a target="_blank" href="http://<?php echo Yii::app()->params['domain']; ?>/shipping" style="text-decoration:none;display:block;line-height:32px;">
-                                                                                                <span style="color:#ffffff;line-height:13px;font-size:13px;">Доставка</span>
+                                                                                                <span style="color:#ffffff;line-height:13px;font-size:13px;">Доставка и оплата</span>
                                                                                             </a>
                                                                                         </td>
                                                                                     </tr>
@@ -117,8 +104,8 @@
                                                         <a target="_blank" style="text-decoration: none;padding-right: 20px;" href="<?php echo Yii::app()->params['instagramLink']; ?>" border="0">
                                                             <img style="background: url('http://<?php echo Yii::app()->params['domain']; ?>/data/i/socials.png?2') 0 0 no-repeat; background-position: -51px -25px;" height="25" width="25" align="baseline" border="0" hspace="0" vspace="0">
                                                         </a>
-                                                        <a target="_blank" style="text-decoration: none;" href="<?php echo Yii::app()->params['odnoklassnikiLink']; ?>" border="0">
-                                                            <img style="background: url('http://<?php echo Yii::app()->params['domain']; ?>/data/i/socials.png?2') 0 0 no-repeat; background-position: -25px -25px;;" height="25" width="25" align="baseline" border="0" hspace="0" vspace="0">
+                                                        <a target="_blank" style="text-decoration: none;" href="<?php echo Yii::app()->params['facebookLink']; ?>" border="0">
+                                                            <img style="background: url('http://<?php echo Yii::app()->params['domain']; ?>/data/i/socials.png?2') 0 0 no-repeat; background-position: -78px -25px;" height="25" width="25" align="baseline" border="0" hspace="0" vspace="0">
                                                         </a>
                                                     </td>
                                                     <td width="20"></td>

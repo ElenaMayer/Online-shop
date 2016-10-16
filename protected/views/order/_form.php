@@ -114,21 +114,21 @@
         </ul>
     <?php endif; ?>
 
-    <div class="row buttons">
-        <a class="add_model_button">Добавить в заказ</a>
-    </div>
+<!--    <div class="row buttons">-->
+<!--        <a class="add_model_button">Добавить в заказ</a>-->
+<!--    </div>-->
 
-    <div class="add_model_form_t hide">
-        <div>
-            <?php echo CHtml::dropDownList('category', 0, Yii::app()->params['categories'], ['class'=>'category']) ?>
-            <?php echo $form->dropDownList($modelCartItem,'item_id', Photo::model()->getArticlesByCategory('dress')) ?>
-            <?php echo $form->dropDownList($modelCartItem,'size', Photo::model()->getSizesByArticle('11010')) ?>
-            <?php echo $form->textField($modelCartItem,'count'); ?>
-            <a class="remove_model_button">Удалить</a>
-        </div>
-    </div>
+<!--    <div class="add_model_form_t hide">-->
+<!--        <div>-->
+<!--            --><?php //echo CHtml::dropDownList('category', 0, Yii::app()->params['categories'], ['class'=>'category']) ?>
+<!--            --><?php //echo $form->dropDownList($modelCartItem,'item_id', Photo::model()->getArticlesByCategory('dress')) ?>
+<!--            --><?php //echo $form->dropDownList($modelCartItem,'size', Photo::model()->getSizesByArticle('11010')) ?>
+<!--            --><?php //echo $form->textField($modelCartItem,'count'); ?>
+<!--            <a class="remove_model_button">Удалить</a>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <div class="add_model_form"></div>
+<!--    <div class="add_model_form"></div>-->
 
 
 <?php $this->endWidget(); ?>

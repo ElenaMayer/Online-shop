@@ -84,6 +84,8 @@ class m140609_055733_create_db extends CDbMigration
         $this->addForeignKey('FK_cart_user_id', 'cart', 'user_id', 'user', 'id', 'CASCADE', 'RESTRICT');
         $this->addForeignKey('FK_cart_item_cart_id', 'cart_item', 'cart_id', 'cart', 'id', 'CASCADE', 'RESTRICT');
         $this->addForeignKey('FK_cart_item_item_id', 'cart_item', 'item_id', 'photo', 'id', 'CASCADE', 'RESTRICT');
+        // $todo order id not pk
+
         $this->createTable('order', array(
             'id' => 'bigint NOT NULL',
             'user_id' => 'int',

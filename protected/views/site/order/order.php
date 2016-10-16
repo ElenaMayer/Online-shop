@@ -31,8 +31,8 @@
         check_shipping();
     });
     cart_id = <?= $cart->id ?>;
-    $( "body" ).on("mouseover", ".item-list__i_help", function() {$(this).children('.hint').addClass('hint-show')});
-    $( "body" ).on("mouseleave", ".item-list__i_help", function() {$(this).children('.hint').removeClass('hint-show')});
+//    $( "body" ).on("mouseover", ".item-list__i_help", function() {$(this).children('.hint').addClass('hint-show')});
+//    $( "body" ).on("mouseleave", ".item-list__i_help", function() {$(this).children('.hint').removeClass('hint-show')});
 
     $( 'body' ).on( 'click', '.order__submit', function() {
         $(this).addClass('button_in-progress').addClass('button_disabled').prop( "disabled", true );
@@ -85,13 +85,13 @@
         }
     });
     function check_shipping() {
-        item_count = <?= $cart->count ?>;
-        if (item_count >= 3){
-            $("#User_shipping").val(0);
-            $('.cart-shipping-val').text(0 + " руб.");
-        } else {
+//        item_count = <//= $cart->count ?>//;
+//        if (item_count >= 3){
+//            $("#User_shipping").val(0);
+//            $('.cart-shipping-val').text(0 + " руб.");
+//        } else {
             get_shipping(parseInt($('#User_postcode').val()));
-        }
+//        }
     }
 
     total = parseInt($('.item-list__total-val').children('span').text());
@@ -143,7 +143,7 @@
     function show_shipping_error(error_code) {
         $("#User_postcode_error").val(error_code);
         $("#User_shipping").val(null);
-        $('.cart-shipping-val').text("Не определена");
+        $('.cart-shipping-val').text("Неверный индекс");
         $('.item-list__total-val').children('span').text(total);
     }
 </script>

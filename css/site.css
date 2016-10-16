@@ -193,6 +193,9 @@
 .table__right-column {
      padding-left: 232px;
  }
+.content > div.catalog:first-child {
+    padding: 30px 10px;
+}
 
 /* Model */
 
@@ -700,6 +703,9 @@
     text-align: center;
     width: 130px;
     padding-right: 30px;
+}
+th.item-list__order____cell {
+    background-color: #e6e6e6;
 }
 
 /* LC (History, Customer) */
@@ -1269,7 +1275,6 @@ body.main.modal-open {
     margin: 0 auto;
     background-color: #fff;
     max-width: 100%;
-    padding: 30px 10px;
 }
 .content > div.catalog {
     width: 1192px;

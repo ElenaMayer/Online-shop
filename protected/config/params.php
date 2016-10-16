@@ -4,14 +4,14 @@ return array(
     'carouselUrl' => [
         'first' => '/medallion',
         'second' => '/charm',
-        'third' => '/chain'
+        'third' => '/plaque'
     ],
 //    'newsCount' => 3,
 //    'newPhotoCountInMail' => 6,
     'categories' => array(
-        'chain' => 'Цепочки',
         'medallion' => 'Медальоны',
         'charm' => 'Шармы',
+        'plaque' => 'Диски',
     ),
     'subcategories' => [
         'charm' => [

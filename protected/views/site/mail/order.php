@@ -1,3 +1,4 @@
+<!-- @todo -->
 <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0">
     <tbody>
         <tr>
@@ -121,6 +122,21 @@
                                             <td height="10" colspan="2"></td>
                                         </tr>
                                         <tr valign="top" align="left" style="height: 25px;">
+                                            <td width="100">
+                                                <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif">
+                                                    <b>Телефон</b>
+                                                </font>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif">
+                                                    <?= $order->phone ?>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="10" colspan="2"></td>
+                                        </tr>
+                                        <tr valign="top" align="left" style="height: 25px;">
                                             <td>
                                                 <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif">
                                                     <b>Адрес</b>
@@ -184,9 +200,9 @@
                                             <td width="315" align="left">
                                                 <font size="2" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><b>Заказ</b></font>
                                             </td>
-                                            <td width="70">
-                                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Размер</b></font>
-                                            </td>
+<!--                                            <td width="70">-->
+<!--                                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Размер</b></font>-->
+<!--                                            </td>-->
                                             <td width="70">
                                                 <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Кол-во</b></font>
                                             </td>
@@ -206,9 +222,9 @@
                                                         </a>
                                                     </font>
                                                 </td>
-                                                <td style="text-align: center;">
-                                                    <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $cartItem->size ?></font>
-                                                </td>
+<!--                                                <td style="text-align: center;">-->
+<!--                                                    <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><//= $cartItem->size ?><!--</font>-->
+<!--                                                </td>-->
                                                 <td style="text-align: center;">
                                                     <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $cartItem->count ?></font>
                                                 </td>

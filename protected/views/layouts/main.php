@@ -112,12 +112,11 @@
                                 'class' => 'booster.widgets.TbMenu',
                                 'type' => 'navbar',
                                 'htmlOptions'=>array('class'=>'menu__list'),
-                                'items' => array(
-                                    // @todo menu
-                                    array('label' => 'Медальоны', 'url' => '/medallion', 'active'=>strpos(Yii::app()->request->pathInfo, 'medallion')===false? false:true),
-                                    array('label' => 'Шармы', 'url' => '/charm', 'active'=>strpos(Yii::app()->request->pathInfo, 'charm')===false? false:true),
-                                    array('label' => 'Цепочки', 'url' => '/chain', 'active'=>strpos(Yii::app()->request->pathInfo, 'chain')===false? false:true),
-                                    array('label' => 'Доставка и оплата', 'url' => '/shipping', 'active'=>strpos(Yii::app()->request->pathInfo, 'shipping')===false? false:true),
+                                'items' =>
+                                    array_merge($this->getCategoryForMenu(),
+                                    array(
+                                        array('label' => 'Доставка и оплата', 'url' => '/shipping', 'active'=>strpos(Yii::app()->request->pathInfo, 'shipping')===false? false:true),
+                                    )
                                 )
                             )
                         )

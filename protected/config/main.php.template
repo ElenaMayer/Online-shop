@@ -43,8 +43,8 @@ return array(
                 'admin/<controller:\w+>/<action:\w+>/' => '<controller>/<action>/',
                 'admin/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>/',
                 // @todo category in catalog and model
-                '<type:(chain|medallion|charm)>'=>'site/catalog',
-                '<type:(chain|medallion|charm)>/<id:\d+>'=>'site/model',
+                '<type:(plaque|medallion|charm)>'=>'site/catalog',
+                '<type:(plaque|medallion|charm)>/<id:\d+>'=>'site/model',
                 'shipping'=>'site/shipping',
                 'customer'=>'site/customer',
                 'history'=>'site/history',

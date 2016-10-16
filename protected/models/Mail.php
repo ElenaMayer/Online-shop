@@ -26,7 +26,7 @@ class Mail {
         $headers .= 'Reply-To: ' . $this->from . "\r\n";
 
         if (mail($this->to, $this->subject, $this->message, $headers)) {
-            $this->saveLog();
+            //$this->saveLog();
         }
     }
 

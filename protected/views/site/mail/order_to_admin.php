@@ -118,9 +118,9 @@
                             <td width="315" align="left">
                                 <font size="2" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><b>Заказ</b></font>
                             </td>
-                            <td width="70">
-                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Размер</b></font>
-                            </td>
+<!--                            <td width="70">-->
+<!--                                <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Размер</b></font>-->
+<!--                            </td>-->
                             <td width="70">
                                 <font size="2" color="#333333" face="Arial, Helvetica, sans-serif" style="font-size: 16px;"><b>Кол-во</b></font>
                             </td>
@@ -140,9 +140,9 @@
                                         </a>
                                     </font>
                                 </td>
-                                <td style="text-align: center;">
-                                    <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $cartItem->size ?></font>
-                                </td>
+<!--                                <td style="text-align: center;">-->
+<!--                                    <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><//= $cartItem->size ?><!--</font>-->
+<!--                                </td>-->
                                 <td style="text-align: center;">
                                     <font size="3" style="font-size: 16px;" color="#333333" face="Arial, Helvetica, sans-serif"><?= $cartItem->count ?></font>
                                 </td>

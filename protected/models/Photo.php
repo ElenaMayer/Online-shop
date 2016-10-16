@@ -356,7 +356,20 @@ class Photo extends CActiveRecord
         $model = $this->findByAttributes([
             'article'=>$article,
         ]);
-        return $this->prepareSizes($model);
+        return $model->prepareSizes();
+    }
+
+    private function prepareSizes(){
+        $sizes = [];
+        if ($this->size) {
+            foreach ($this->sizesArr as $size){
+                $sizes[$size] = $size;
+            }
+        } else {
+            $size = $this->size_at . " - " . $this->size_to;
+            $sizes[$size] = $size;
+        }
+        return $sizes;
     }
 
     public function getSizesArray(){
