@@ -45,10 +45,10 @@
         //                'htmlOptions'=>array('class'=>'catalog__size_menu')
         //            )); ?>
         <!--        </div>-->
-                <div class="catalog__cont">
-                    <span>Всего <?= count($model) ?> товаров</span>
+                <div class="title">
+                    <h2><?php if (isset($_GET['subcategory'])):?><?= Yii::app()->params['subcategories'][$type][$_GET['subcategory']] ?><?php else: ?><?= Yii::app()->params['categories'][$type] ?><?php endif; ?></h2>
+                    <span class="catalog__head-counter"><?= count($model) ?> товаров</span>
                 </div>
-                <div class="clear"></div>
             </div>
             <div class="catalog__data">
                 <?php if(empty($model)): ?>

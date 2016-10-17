@@ -144,7 +144,7 @@
                                             </td>
                                             <td style="text-align: right;">
                                                 <font size="3" style="font-size: 16px;line-height: 1.3;" color="#333333" face="Arial, Helvetica, sans-serif">
-                                                    <?= $order->address;?>
+                                                    <?= $order->postcode;?>,</br><?= $order->address;?>
                                                 </font>
                                             </td>
                                         </tr>

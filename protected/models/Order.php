@@ -10,6 +10,7 @@
  * @property integer $is_paid
  * @property string $shipping_method
  * @property string $payment_method
+ * @property integer $postcode
  * @property string $addressee
  * @property string $address
  * @property integer $subtotal
@@ -46,12 +47,12 @@ class Order extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id, address, subtotal, sale, shipping, total', 'required'),
-			array('user_id, is_paid, subtotal, sale, shipping, total', 'numerical', 'integerOnly'=>true),
+			array('user_id, is_paid, subtotal, sale, shipping, total, postcode', 'numerical', 'integerOnly'=>true),
 			array('id', 'length', 'max'=>13),
 			array('status, shipping_method, payment_method, addressee, address, track_code, phone, email', 'length', 'max'=>255),
 			array('date_create', 'safe'),
             array('date_create','default', 'value'=>new CDbExpression('NOW()'), 'setOnEmpty'=>false,'on'=>'insert'),
-			array('id, user_id, status, is_paid, shipping_method, payment_method, addressee, address, subtotal, sale, shipping, total, date_create, track_code, phone, email', 'safe', 'on'=>'search'),
+			array('id, user_id, status, is_paid, shipping_method, payment_method, addressee, address, subtotal, sale, shipping, total, date_create, track_code, phone, email, postcode', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +81,7 @@ class Order extends CActiveRecord
             'is_paid' => 'Оплачено',
             'shipping_method' => 'Метод доставки',
             'payment_method' => 'Оплата',
+            'postcode' => 'Индекс',
             'addressee' => 'Получатель',
             'address' => 'Адрес',
             'subtotal' => 'Подитог',
@@ -113,6 +115,7 @@ class Order extends CActiveRecord
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('is_paid',$this->is_paid);
+        $criteria->compare('postcode',$this->postcode,true);
 		$criteria->compare('addressee',$this->addressee,true);
 		$criteria->compare('date_create',$this->date_create,true);
 		$criteria->compare('track_code',$this->track_code,true);

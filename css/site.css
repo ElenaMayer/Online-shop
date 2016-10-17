@@ -60,7 +60,7 @@
 }
 .catalog__item__link:hover .catalog__item__article,
 .catalog__item__link.selected .catalog__item__article {
-    color: #D51AB1;
+    color: #F31E50;
     font-weight: 700;
 }
 .catalog__item .price {
@@ -72,9 +72,26 @@
     padding-right: 20px;
     padding-left: 20px;
     margin-left: -8px;
-    border-bottom: 3px solid #D51AB1;
+    border-bottom: 3px solid #6b0dcf;
     margin-bottom: 6px;
     padding-top: 5px;
+}
+.catalog__head .title {
+    margin: 0 252px 12px 0;
+}
+.catalog__head h2 {
+    display: inline;
+    font-size: 22px;
+    font-weight: 400;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.catalog__head-counter {
+    display: inline-block;
+    vertical-align: top;
+    color: #aaa;
+    font-family: 'ProximaNova Light','Helvetica Neue',Arial;
+    font-size: 22px;
 }
 .catalog__dd {
     float: right;
@@ -316,7 +333,7 @@
 .shipping h1 {
     color: #27292c;
     margin: -26px 0 26px;
-    border-bottom: 5px solid #7C27CF;
+    border-bottom: 3px solid #7C27CF;
     font-size: 37px;
     line-height: 100px;
 }

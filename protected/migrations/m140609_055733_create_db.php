@@ -93,6 +93,7 @@ class m140609_055733_create_db extends CDbMigration
             'is_paid' => 'boolean',
             'shipping_method' => 'string',
             'payment_method' => 'string',
+            'postcode' => 'int',
             'addressee' => 'string',
             'address' => 'string',
             'subtotal' => 'int',
