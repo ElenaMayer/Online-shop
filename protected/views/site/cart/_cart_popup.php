@@ -18,7 +18,7 @@
             </div>
             <div class="post-cart-add__footer">
                 <span class="link post-cart-add__close" data-dismiss="modal">Продолжить покупки</span>
-                <a class="button button_blue button_big post-cart-add__basket" href="/order/<?= $cartItem->cart->id ?>">
+                <a  <?php if($cartItem->cart->total >= Yii::app()->params['minOrderSum']) :?>href="/order/<?= $cartItem->cart->id ?>"<?php endif; ?> class="button button_blue button_big post-cart-add__basket <?php if($cartItem->cart->total < Yii::app()->params['minOrderSum']) :?>button_disabled<?php endif; ?>">
                     <span class="button__title">Оформить заказ</span>
                 </a>
             </div>

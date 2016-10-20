@@ -8,7 +8,7 @@ return array(
     ],
 //    'newsCount' => 3,
 //    'newPhotoCountInMail' => 6,
-    'minOrderSum' => 1700,
+    'minOrderSum' => 500,
     'categories' => array(
         'medallion' => 'Медальоны',
         'charm' => 'Шармы',
