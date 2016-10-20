@@ -116,6 +116,7 @@
                                     array_merge($this->getCategoryForMenu(),
                                     array(
                                         array('label' => 'Доставка и оплата', 'url' => '/shipping', 'active'=>strpos(Yii::app()->request->pathInfo, 'shipping')===false? false:true),
+                                        array('label' => 'Корзина', 'url' => '/cart', 'active'=>strpos(Yii::app()->request->pathInfo, 'cart')===false? false:true),
                                     )
                                 )
                             )

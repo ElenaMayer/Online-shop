@@ -12,17 +12,9 @@
             <?php endforeach; ?>
         </ul>
         <div class="item-list__separator"></div>
-        <div class="item-list__total item-list__total_threshold">
+        <div id="item-list__total">
             <?php $this->renderPartial($path.'cart/_cart_total', array('model'=>$model)); ?>
         </div>
-        <div class="item-list__separator"></div>
-        <div class="item-list__navigation">
-            <a href="/order/<?= $model->id?>" class="button button_blue button_big item-list__navigation__order">
-                <span class="button__title">Оформить заказ</span>
-                <span class="button__progress"></span>
-            </a>
-        </div>
-        <div class="item-list__separator"></div>
     </div>
 <?php else :?>
     <div class="cart__empty"><h2 class="h2">В корзину ничего не добавлено</h2></div>
@@ -76,7 +68,7 @@
                     e = $('#cart_item_' + item_id)
                     if (data) {
                         e.hide('slow');
-                        $('.item-list__total').html(data);
+                        $('#item-list__total').html(data);
                         updateCartCount();
                     } else {
                         e.find('button.remove').removeClass('button_in-progress').removeClass('button_disabled');

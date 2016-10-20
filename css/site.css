@@ -425,6 +425,13 @@
     color: #999;
     margin-bottom: 21px;
 }
+.item-list__total__price_error {
+    float: right;
+    clear: both;
+    margin: 0 20px 20px 0;
+    font-weight: bold;
+    color: #F31E50;
+}
 
 /* Cart modal*/
 
@@ -506,12 +513,12 @@
 }
 .order .order-form .has-error .form-control,
 .order .order-form .form-control.error {
-    border-color: #D51AB1;
+    border-color: #F31E50;
 }
 .order .order-form .has-error .help-block,
 .order .order-form .has-error .control-label,
 .order .order-form label.error {
-    color: #D51AB1;
+    color: #F31E50;
 }
 .order .order-form label.error {
     padding: 0;
@@ -1454,9 +1461,9 @@ div.content .row:last-child {
     font-weight: 700;
 }
 .form-control:focus {
-    border-color: #F31E50 !important;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(243, 30, 80, 0.6) !important;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(243, 30, 80, 0.6) !important;
+    border-color: #D51AB1 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(213, 26, 177, 0.6) !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(213, 26, 177, 0.6) !important;
 }
 div.form span.required {
     color: #D51AB1 !important;

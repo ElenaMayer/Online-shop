@@ -8,10 +8,11 @@ return array(
     ],
 //    'newsCount' => 3,
 //    'newPhotoCountInMail' => 6,
+    'minOrderSum' => 1700,
     'categories' => array(
         'medallion' => 'Медальоны',
         'charm' => 'Шармы',
-        'plaque' => 'Диски',
+//        'plaque' => 'Диски',
     ),
     'subcategories' => [
         'charm' => [
