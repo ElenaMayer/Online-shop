@@ -1,7 +1,7 @@
 <div class="item-list__total item-list__total_threshold">
     <?php if($model->sale > 0) :?>
         <div class="item-list__total__price item-list__total__price_subtotal">
-            <span class="item-list__total__price-title">Подытог</span>
+            <span class="item-list__total__price-title">Подитог</span>
             <span class="cart-subtotal-val"><?= $model->subtotal ?> руб.</span>
         </div>
         <div class="item-list__total__price item-list__total__price_discount">

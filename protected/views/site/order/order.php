@@ -78,11 +78,11 @@
     }
     $( 'body' ).on( 'keyup', '#User_postcode', function() {
         item_count = <?= $cart->count ?>;
-        if (item_count < 3) {
+//        if (item_count < 3) {
             if ($(this).val().length == 6) {
                 get_shipping($(this).val());
             }
-        }
+//        }
     });
     function check_shipping() {
 //        item_count = <//= $cart->count ?>//;
