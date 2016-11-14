@@ -12,7 +12,7 @@ return array(
     'categories' => array(
         'medallion' => 'Медальоны',
         'charm' => 'Шармы',
-//        'plaque' => 'Диски',
+        'plaque' => 'Диски',
     ),
     'subcategories' => [
         'charm' => [
@@ -21,9 +21,14 @@ return array(
             'love' => 'Любовь',
             'symbols' => 'Символы',
             'animals' => 'Животные',
+            'travels' => 'Путешествия',
             'hobby' => 'Увлечения',
             'nature' => 'Природа',
-            'crystals' => 'Стразы'
+            'crystals' => 'Стразы',
+            'food' => 'Еда и напитки',
+            'profession' => 'Профессии',
+            'celebration' => 'Новый год',
+            'other' => 'Другое',
         ],
     ],
 //    'shippingFreeCount' => 3,

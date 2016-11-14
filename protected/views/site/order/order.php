@@ -107,17 +107,17 @@
             dataType: 'jsonp',
             success: function (data) {
                 if (data['Status'] == "OK") {
-                    tariff = parseInt(data['Отправления']['ЦеннаяПосылка']['Тариф']);
-                    if (tariff == 0) {
+//                    tariff = parseInt(data['Отправления']['ЦеннаяПосылка']['Тариф']);
+//                    if (tariff == 0) {
                         tariff = parseInt(data['Отправления']['ЦеннаяБандероль1Класс']['Тариф']);
                         if (tariff == 0) {
                             show_shipping_error(2);
                         } else {
                             show_shipping(tariff);
                         }
-                    } else {
-                        show_shipping(tariff);
-                    }
+//                    } else {
+//                        show_shipping(tariff);
+//                    }
                 } else if(data['Status'] == "BAD_TO_INDEX"){
                     show_shipping_error(1);
                 }
