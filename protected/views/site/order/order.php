@@ -50,6 +50,7 @@
                     error = true;
                 }
                 if (!error) {
+                    yaCounter40912744.reachGoal('order');
                     if (data.status == 'in_progress') {
                         get_order_modal(data.orderId);
                     } else if(data.status == 'payment') {
