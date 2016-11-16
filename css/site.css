@@ -1903,7 +1903,7 @@ IPhone 6Plus 1920×1080
         top: 18px;
     }
     .catalog__item {
-        width: 50%;
+        width: 100%;
     }
     .catalog__cont {
         font-size: 20px;
@@ -2020,6 +2020,17 @@ IPhone 6Plus 1920×1080
     .history .order-data__table {
         width: 100%;
     }
+    .catalog__head h2 {
+        font-size: 16px;
+        margin-right: 5px;
+    }
+    .catalog__head-counter {
+        font-size: 16px;
+    }
+    .catalog__head .title {
+        padding-bottom: 10px;
+        margin: 0;
+    }
 }
 
 @media only screen and (max-width: 479px) {
@@ -2130,13 +2141,32 @@ IPhone 6Plus 1920×1080
     .history .item-list__item__cell_description {
         margin-left: 0;
     }
-    .basket-button .button__icon {
-        margin-top: 5px;
-    }
     .main-description {
         font-size: 12px;
     }
     .main-description p {
         padding-bottom: 0px;
+    }
+    .table__left-column {
+        float: none;
+        padding: 0;
+    }
+    .table__right-column {
+        padding-left: 0;
+        border-top: 3px solid #6b0dcf;
+    }
+    .catalog-navigation-wrap {
+        position: relative;
+        padding-top: 1px;
+        width: 98%;
+    }
+    .catalog-navigation__item {
+        margin: 0 0 10px;
+    }
+    .content > div.catalog:first-child {
+        padding: 10px 10px;
+    }
+    .catalog__head {
+        margin: 0;
     }
 }
