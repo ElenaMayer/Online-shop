@@ -1850,6 +1850,13 @@ IPhone 6Plus 1920×1080
         left: -130px;
         font-size: 13px;
     }
+    .main-description {
+        width: 100%;
+        font-size: 13px;
+    }
+    .main-description p {
+        line-height: 15px;
+    }
 }
 
 /*iPad in portrait & landscape*/
@@ -2122,5 +2129,14 @@ IPhone 6Plus 1920×1080
     }
     .history .item-list__item__cell_description {
         margin-left: 0;
+    }
+    .basket-button .button__icon {
+        margin-top: 5px;
+    }
+    .main-description {
+        font-size: 12px;
+    }
+    .main-description p {
+        padding-bottom: 0px;
     }
 }

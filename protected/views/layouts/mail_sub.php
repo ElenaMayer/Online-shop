@@ -127,7 +127,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="center">
-                                                        <font size="3" style="font-size: 11px;" color="#858585" face="Arial, Helvetica, sans-serif">Вы получили письмо, так как являетесь подписчиком сайта Восточный Стиль <?= Yii::app()->params['domain'] ?>.</font>
+                                                        <font size="3" style="font-size: 11px;" color="#858585" face="Arial, Helvetica, sans-serif">Вы получили письмо, так как являетесь подписчиком сайта <?php echo Yii::app()->params['domain']; ?> <?= Yii::app()->params['domain'] ?>.</font>
                                                         </br>
                                                         <font size="3" style="font-size: 11px;" color="#858585" face="Arial, Helvetica, sans-serif">Если Вы хотите отписать адрес <b><?= Yii::app()->userForMail->email ?></b>, нажмите <a href="http://<?= Yii::app()->params['domain'] ?>/unsubscribe/?id=<?= Yii::app()->userForMail->id ?>&email=<?= Yii::app()->userForMail->email ?>&hash=<?= Yii::app()->userForMail->hash ?>" target="_blank" style="text-decoration: none;">
                                                                 <b><font size="3" style="font-size: 11px;color: #4e4e4e; text-align: center; width: 225px;" color="#4e4e4e" face="Arial, Helvetica, sans-serif">отписаться</font></b>
